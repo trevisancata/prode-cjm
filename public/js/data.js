@@ -21,11 +21,11 @@ const KNOCKOUT_ROUNDS = [
   // 32avos — 16 partidos (llave A: 8, llave B: 8)
   { id:'r64a', name:'32avos — llave A', matches:[
     ['1E','3ABCDF'],['1I','3CDFGH'],['2A','2B'],['1F','2C'],
-    ['2K','2L'],['1H','2J'],['1D','1G'],['3AEHIJ','3BEFIJ'],
+    ['2K','2L'],['1H','2J'],['1D','3BEFIJ'],['1G','3AEHIJ'],
   ]},
   { id:'r64b', name:'32avos — llave B', matches:[
     ['1C','2F'],['2E','2I'],['1A','3CEFHI'],['1L','3EHIJK'],
-    ['1J','2H'],['2D','2G'],['1B','1K'],['3DEIJL','3EFGIJ'],
+    ['1J','2H'],['2D','2G'],['1B','3EFGIJ'],['1K','3DEIJL'],
   ]},
   // 8vos — 8 partidos
   { id:'r32', name:'Octavos de final', matches:[
