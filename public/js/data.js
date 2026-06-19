@@ -36,12 +36,12 @@ const KNOCKOUT_ROUNDS = [
   ]},
   // 4tos — 4 partidos
   { id:'qf', name:'Cuartos de final', matches:[
-    ['8vos G1','8vos G2'],['8vos G3','8vos G4'],
-    ['8vos G5','8vos G6'],['8vos G7','8vos G8'],
+    ['G1','G2'],['G3','G4'],
+    ['G5','G6'],['G7','G8'],
   ]},
   // Semis — 2 partidos
   { id:'sf', name:'Semifinales', matches:[
-    ['4tos G1','4tos G2'],['4tos G3','4tos G4'],
+    ['G1','G2'],['G3','G4'],
   ]},
   { id:'final',  name:'Final',          matches:[['Semi G1','Semi G2']] },
   { id:'bronze', name:'Tercer puesto',  matches:[['Semi G3','Semi G4']] },
