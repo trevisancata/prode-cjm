@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════════════════════════
 
 // ── Contraseña simple (cliente-side, para protección básica) ───
-const ADMIN_PASSWORD = 'cjm2026'; // Cambiala acá
+const ADMIN_PASSWORD = 'jugadoras.jm'; // Cambiala acá
 
 function checkPass() {
   const val = document.getElementById('admin-pass').value;
