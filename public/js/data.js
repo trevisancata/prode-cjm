@@ -18,18 +18,33 @@ const GRUPOS = [
 ];
 
 const KNOCKOUT_ROUNDS = [
-  { id:'r32',  name:'Octavos — llave A', matches:[
+  // 32avos — 16 partidos (llave A: 8, llave B: 8)
+  { id:'r64a', name:'32avos — llave A', matches:[
     ['1E','3ABCDF'],['1I','3CDFGH'],['2A','2B'],['1F','2C'],
     ['2K','2L'],['1H','2J'],['1D','1G'],['3AEHIJ','3BEFIJ'],
   ]},
-  { id:'r32b', name:'Octavos — llave B', matches:[
+  { id:'r64b', name:'32avos — llave B', matches:[
     ['1C','2F'],['2E','2I'],['1A','3CEFHI'],['1L','3EHIJK'],
     ['1J','2H'],['2D','2G'],['1B','1K'],['3DEIJL','3EFGIJ'],
   ]},
-  { id:'qf',     name:'Cuartos de final',  matches:[['QF1 Local','QF1 Visit'],['QF2 Local','QF2 Visit'],['QF3 Local','QF3 Visit'],['QF4 Local','QF4 Visit']] },
-  { id:'sf',     name:'Semifinales',        matches:[['SF1 Local','SF1 Visit'],['SF2 Local','SF2 Visit']] },
-  { id:'final',  name:'Final',              matches:[['Final Local','Final Visit']] },
-  { id:'bronze', name:'Tercer puesto',      matches:[['3° Local','3° Visit']] },
+  // 8vos — 8 partidos
+  { id:'r32', name:'Octavos de final', matches:[
+    ['R64A G1','R64B G1'],['R64A G2','R64B G2'],
+    ['R64A G3','R64B G3'],['R64A G4','R64B G4'],
+    ['R64A G5','R64B G5'],['R64A G6','R64B G6'],
+    ['R64A G7','R64B G7'],['R64A G8','R64B G8'],
+  ]},
+  // 4tos — 4 partidos
+  { id:'qf', name:'Cuartos de final', matches:[
+    ['8vos G1','8vos G2'],['8vos G3','8vos G4'],
+    ['8vos G5','8vos G6'],['8vos G7','8vos G8'],
+  ]},
+  // Semis — 2 partidos
+  { id:'sf', name:'Semifinales', matches:[
+    ['4tos G1','4tos G2'],['4tos G3','4tos G4'],
+  ]},
+  { id:'final',  name:'Final',          matches:[['Semi G1','Semi G2']] },
+  { id:'bronze', name:'Tercer puesto',  matches:[['Semi G3','Semi G4']] },
 ];
 
 // ── Key helpers ──────────────────────────────────────────
@@ -53,11 +68,9 @@ function countFilled(record) {
 }
 
 // ── Motor de puntaje ─────────────────────────────────────
-// Compara un prode contra los resultados reales y devuelve puntos
 function calcScore(prode, real) {
   let pts = 0;
   const allMatches = [];
-
   GRUPOS.forEach(g => g.matches.forEach((_, i) => {
     allMatches.push({ hKey: gKey(g.id,i,'h'), aKey: gKey(g.id,i,'a') });
   }));
@@ -69,17 +82,10 @@ function calcScore(prode, real) {
     const rh = real[hKey], ra = real[aKey];
     const ph = prode[hKey], pa = prode[aKey];
     if (rh == null || ra == null || ph == null || pa == null) return;
-
-    // Resultado exacto: 5 pts
     if (ph === rh && pa === ra) { pts += 5; return; }
-
-    // Ganador/empate correcto: 3 pts
-    const rSign = Math.sign(rh - ra);
-    const pSign = Math.sign(ph - pa);
-    if (rSign === pSign) pts += 3;
+    if (Math.sign(ph-pa) === Math.sign(rh-ra)) pts += 3;
   });
 
-  // Bonos
   if (real.campeon    && prode.campeon    && normalize(prode.campeon)    === normalize(real.campeon))    pts += 100;
   if (real.subcampeon && prode.subcampeon && normalize(prode.subcampeon) === normalize(real.subcampeon)) pts += 50;
   if (real.tercero    && prode.tercero    && normalize(prode.tercero)    === normalize(real.tercero))    pts += 25;
@@ -89,6 +95,5 @@ function calcScore(prode, real) {
 }
 
 function normalize(str) {
-  return str.trim().toLowerCase()
-    .normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  return str.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
 }
