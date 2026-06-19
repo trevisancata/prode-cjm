@@ -41,10 +41,10 @@ const KNOCKOUT_ROUNDS = [
   ]},
   // Semis — 2 partidos
   { id:'sf', name:'Semifinales', matches:[
-    ['G1','G2'],['G3','G4'],
+    ['G12','G34'],['G56','G78'],
   ]},
-  { id:'final',  name:'Final',          matches:[['Semi G1','Semi G2']] },
-  { id:'bronze', name:'Tercer puesto',  matches:[['Semi G3','Semi G4']] },
+  { id:'final',  name:'Final',          matches:[['Semi DER','Semi IZQ']] },
+  { id:'bronze', name:'Tercer puesto',  matches:[['Semi DER','Semi IZQ']] },
 ];
 
 // ── Key helpers ──────────────────────────────────────────
