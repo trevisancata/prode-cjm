@@ -3,18 +3,16 @@
 // ═══════════════════════════════════════════════════════════════
 
 const GRUPOS = [
-  { id:'a', name:'A', matches:[['CZE','SUD'],['MEX','COR'],['CZE','MEX'],['SUD','COR']] },
-  { id:'b', name:'B', matches:[['SUI','BIH'],['CAN','QAT'],['SUI','CAN'],['BIH','QAT']] },
-  { id:'c', name:'C', matches:[['USA','AUS'],['TUR','PAR'],['TUR','USA'],['PAR','AUS']] },
-  { id:'d', name:'D', matches:[['ESP','SAU'],['URU','CVE'],['CVE','SAU'],['URU','ESP']] },
-  { id:'e', name:'E', matches:[['ALE','CMA'],['ECU','CUR'],['CUR','CMA'],['ECU','ALE']] },
-  { id:'f', name:'F', matches:[['PBA','SUE'],['TUN','JAP'],['JAP','SUE'],['TUN','PBA']] },
-  { id:'g', name:'G', matches:[['BEL','IRA'],['NZE','EGI'],['EGI','IRA'],['NZE','BEL']] },
-  { id:'h', name:'H', matches:[['FRA','IRQ'],['NOR','SEN'],['NOR','FRA'],['SEN','IRQ']] },
-  { id:'i', name:'I', matches:[['ARG','AUT'],['JOR','AGL'],['AGL','AUT'],['JOR','ARG']] },
-  { id:'j', name:'J', matches:[['POR','UZB'],['COL','RDC'],['COL','POR'],['RDC','UZB']] },
-  { id:'k', name:'K', matches:[['ING','GHA'],['PAN','CRO'],['PAN','ING'],['CRO','GHA']] },
-  { id:'l', name:'L', matches:[['ESC','MAR'],['BRA','HAI'],['BRA','ESC'],['MAR','HAI']] },
+  { id:'c', name:'C', matches:[['ESC','MAR'],['BRA','HAI'],['BRA','ESC'],['MAR','HAI']] },
+  { id:'d', name:'D', matches:[['USA','AUS'],['TUR','PAR'],['TUR','USA'],['PAR','AUS']] },
+  { id:'e', name:'E', matches:[['ESP','SAU'],['URU','CVE'],['CVE','SAU'],['URU','ESP']] },
+  { id:'f', name:'F', matches:[['ALE','CMA'],['ECU','CUR'],['CUR','CMA'],['ECU','ALE']] },
+  { id:'g', name:'G', matches:[['PBA','SUE'],['TUN','JAP'],['JAP','SUE'],['TUN','PBA']] },
+  { id:'h', name:'H', matches:[['BEL','IRA'],['NZE','EGI'],['EGI','IRA'],['NZE','BEL']] },
+  { id:'i', name:'I', matches:[['FRA','IRQ'],['NOR','SEN'],['NOR','FRA'],['SEN','IRQ']] },
+  { id:'j', name:'J', matches:[['ARG','AUT'],['JOR','AGL'],['AGL','AUT'],['JOR','ARG']] },
+  { id:'k', name:'K', matches:[['POR','UZB'],['COL','RDC'],['COL','POR'],['RDC','UZB']] },
+  { id:'l', name:'L', matches:[['ING','GHA'],['PAN','CRO'],['PAN','ING'],['CRO','GHA']] },
 ];
 
 const KNOCKOUT_ROUNDS = [
