@@ -29,10 +29,10 @@ const KNOCKOUT_ROUNDS = [
   ]},
   // 8vos — 8 partidos
   { id:'r32', name:'Octavos de final', matches:[
-    ['R64A G1','R64B G1'],['R64A G2','R64B G2'],
-    ['R64A G3','R64B G3'],['R64A G4','R64B G4'],
-    ['R64A G5','R64B G5'],['R64A G6','R64B G6'],
-    ['R64A G7','R64B G7'],['R64A G8','R64B G8'],
+    ['G1A','G1B'],['G2A','G2B'],
+    ['G3A','G3B'],['G4A','G4B'],
+    ['G5A','G5B'],['G6A','G6B'],
+    ['G7A','G7B'],['G8A','G8B'],
   ]},
   // 4tos — 4 partidos
   { id:'qf', name:'Cuartos de final', matches:[
