@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Prode Mundial CJM 2026</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-shield">⚽</div>
+      <div class="header-text">
+        <h1>Prode Mundial CJM 2026</h1>
+        <p>Club JM · Panel de administración</p>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html"   class="nav-link">Mi prode</a>
+        <a href="ranking.html" class="nav-link">Ranking</a>
+        <a href="admin.html"   class="nav-link active">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Password gate -->
+  <div id="gate" class="main" style="max-width:400px">
+    <div class="card">
+      <div class="section-heading">Acceso admin</div>
+      <div class="field" style="margin-bottom:.75rem">
+        <label for="admin-pass">Contraseña</label>
+        <input type="password" id="admin-pass" placeholder="Ingresá la clave">
+      </div>
+      <button class="btn btn-primary" style="width:100%" onclick="checkPass()">Entrar</button>
+      <div id="gate-err" class="feedback err" hidden>Contraseña incorrecta.</div>
+    </div>
+  </div>
+
+  <main class="main" id="admin-main" hidden>
+    <p class="page-title">Panel admin</p>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('prodes')">Prodes cargados</button>
+      <button class="tab-btn"        onclick="switchTab('resultados')">Cargar resultados</button>
+    </div>
+
+    <!-- TAB: PRODES -->
+    <div id="tab-prodes">
+      <div class="card">
+        <div class="admin-toolbar">
+          <span class="stat-pill" id="stat-total">— prodes</span>
+          <input type="search" class="search-input" id="search" placeholder="Buscar por nombre...">
+          <div class="toolbar-right">
+            <button class="btn btn-ghost btn-sm" id="btn-refresh">↻ Actualizar</button>
+            <button class="btn btn-ghost btn-sm" id="btn-export">↓ CSV</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th><th>Nombre</th><th>Teléfono</th><th>Jugadora</th>
+                <th>Campeón</th><th>Subcampeón</th><th>3°</th><th>Goleador</th>
+                <th>Completitud</th><th>Puntos</th><th>Fecha</th><th></th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <tr><td colspan="12" class="table-empty">Cargando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: RESULTADOS -->
+    <div id="tab-resultados" hidden>
+      <div class="card">
+        <div class="section-heading">Resultados reales del torneo</div>
+        <p class="section-hint">Cargá los resultados a medida que se juegan. Al guardar, el ranking se actualiza automáticamente.</p>
+
+        <div class="grupos-grid" id="res-grupos-grid"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-heading">Fase eliminatoria</div>
+        <div id="res-knockout-container"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-heading">Podio y goleador</div>
+        <div class="podio-grid">
+          <div class="field"><label>🥇 Campeón</label><input type="text" id="res-campeon"    placeholder="País campeón"></div>
+          <div class="field"><label>🥈 Subcampeón</label><input type="text" id="res-subcampeon" placeholder="País subcampeón"></div>
+          <div class="field"><label>🥉 Tercer puesto</label><input type="text" id="res-tercero"    placeholder="País 3er puesto"></div>
+          <div class="field"><label>⚽ Goleador</label><input type="text" id="res-goleador"   placeholder="Jugador"></div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn btn-primary" id="btn-save-res">
+          <span id="res-btn-text">Guardar resultados</span>
+          <span id="res-spinner" class="spinner" hidden></span>
+        </button>
+      </div>
+      <div id="res-feedback" class="feedback" hidden></div>
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

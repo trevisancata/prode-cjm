@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prode Mundial CJM 2026</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-shield">⚽</div>
+      <div class="header-text">
+        <h1>Prode Mundial CJM 2026</h1>
+        <p>Club JM · Todo lo recaudado va al gym</p>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html"   class="nav-link active">Mi prode</a>
+        <a href="ranking.html" class="nav-link">Ranking</a>
+        <a href="admin.html"   class="nav-link">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <p class="page-title">Cargar prode</p>
+    <p class="page-sub">Completá tu predicción partido a partido. Acertar el ganador suma 3 pts, el resultado exacto suma 5 pts.</p>
+
+    <form id="prode-form" novalidate>
+
+      <div class="card">
+        <div class="section-heading">Tus datos</div>
+        <div class="personal-grid">
+          <div class="field">
+            <label for="nombre">Nombre y apellido <span class="req">*</span></label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Ej: María García" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="11 1234-5678" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="jugadora">Jugadora</label>
+            <input type="text" id="jugadora" name="jugadora" placeholder="Nro o nombre">
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-heading">Fase de grupos</div>
+        <p class="section-hint">Ingresá el marcador final que predecís para cada partido.</p>
+        <div class="grupos-grid" id="grupos-grid"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-heading">Fase eliminatoria</div>
+        <p class="section-hint">Podés completar hasta donde quieras. Los casilleros vacíos no suman ni restan.</p>
+        <div id="knockout-container"></div>
+      </div>
+
+      <div class="card podio-card">
+        <div class="section-heading">Podio y goleador</div>
+        <div class="podio-grid">
+          <div class="field">
+            <label>🥇 Campeón <span class="pts-badge">+100</span></label>
+            <input type="text" id="campeon" name="campeon" placeholder="País">
+          </div>
+          <div class="field">
+            <label>🥈 Subcampeón <span class="pts-badge">+50</span></label>
+            <input type="text" id="subcampeon" name="subcampeon" placeholder="País">
+          </div>
+          <div class="field">
+            <label>🥉 Tercer puesto <span class="pts-badge">+25</span></label>
+            <input type="text" id="tercero" name="tercero" placeholder="País">
+          </div>
+          <div class="field">
+            <label>⚽ Goleador <span class="pts-badge">+100</span></label>
+            <input type="text" id="goleador" name="goleador" placeholder="Jugador">
+          </div>
+        </div>
+        <div class="scoring-legend">
+          <span>Acertar ganador/empate: <strong>3 pts</strong></span>
+          <span>Acertar resultado exacto: <strong>5 pts</strong></span>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn btn-ghost" id="btn-reset">Limpiar</button>
+        <button type="submit" class="btn btn-primary" id="btn-submit">
+          <span id="btn-text">Guardar prode</span>
+          <span id="btn-spinner" class="spinner" hidden></span>
+        </button>
+      </div>
+      <div id="form-feedback" class="feedback" hidden></div>
+    </form>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranking — Prode Mundial CJM 2026</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-shield">⚽</div>
+      <div class="header-text">
+        <h1>Prode Mundial CJM 2026</h1>
+        <p>Club JM · Todo lo recaudado va al gym</p>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html"   class="nav-link">Mi prode</a>
+        <a href="ranking.html" class="nav-link active">Ranking</a>
+        <a href="admin.html"   class="nav-link">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <p class="page-title">Ranking en tiempo real</p>
+    <p class="page-sub">Puntaje calculado sobre los resultados cargados hasta ahora. Los primeros 5 ganan premio. 🎁</p>
+
+    <div class="card" id="ranking-card">
+      <div class="section-heading">Tabla de posiciones</div>
+      <div id="ranking-container">
+        <p style="color:var(--ink-soft);font-size:.85rem">Cargando ranking...</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:1rem">
+      <div class="section-heading">Sistema de puntaje</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.75rem;font-size:.82rem;color:var(--ink-mid)">
+        <div>⚽ Resultado exacto <strong style="color:var(--rose)">+5 pts</strong></div>
+        <div>✅ Ganador/empate correcto <strong style="color:var(--rose)">+3 pts</strong></div>
+        <div>🥇 Campeón acertado <strong style="color:var(--rose)">+100 pts</strong></div>
+        <div>🥈 Subcampeón acertado <strong style="color:var(--rose)">+50 pts</strong></div>
+        <div>🥉 3er puesto acertado <strong style="color:var(--rose)">+25 pts</strong></div>
+        <div>🎯 Goleador acertado <strong style="color:var(--rose)">+100 pts</strong></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/ranking.js"></script>
+</body>
+</html>
