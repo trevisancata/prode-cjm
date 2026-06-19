@@ -3,6 +3,8 @@
 // ═══════════════════════════════════════════════════════════════
 
 const GRUPOS = [
+  { id:'a', name:'A', matches:[['CZE','SUD'],['MEX','COR'],['CZE','MEX'],['SUD','COR']] },
+  { id:'b', name:'B', matches:[['SUI','BIH'],['CAN','QAT'],['SUI','CAN'],['BIH','QAT']] },
   { id:'c', name:'C', matches:[['ESC','MAR'],['BRA','HAI'],['BRA','ESC'],['MAR','HAI']] },
   { id:'d', name:'D', matches:[['USA','AUS'],['TUR','PAR'],['TUR','USA'],['PAR','AUS']] },
   { id:'e', name:'E', matches:[['ESP','SAU'],['URU','CVE'],['CVE','SAU'],['URU','ESP']] },
