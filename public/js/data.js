@@ -43,8 +43,8 @@ const KNOCKOUT_ROUNDS = [
   { id:'sf', name:'Semifinales', matches:[
     ['G12','G34'],['G56','G78'],
   ]},
-  { id:'final',  name:'Final',          matches:[['Semi DER','Semi IZQ']] },
-  { id:'bronze', name:'Tercer puesto',  matches:[['Semi DER','Semi IZQ']] },
+  { id:'final',  name:'Final',          matches:[['Semi IZQ','Semi DER']] },
+  { id:'bronze', name:'Tercer puesto',  matches:[['Semi IZQ','Semi DER']] },
 ];
 
 // ── Key helpers ──────────────────────────────────────────
